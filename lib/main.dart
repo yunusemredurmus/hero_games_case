@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hero_games_case/screens/register_screen.dart';
 import 'package:hero_games_case/screens/splash_screen.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MainApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
+        '/register': (context) => const RegisterScreen(),
       },
     );
   }

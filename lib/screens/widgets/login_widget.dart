@@ -48,7 +48,7 @@ class LoginWidget extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, '/forgot');
             },
-            child: const Text("Forgot Password?",
+            child: const Text("Forgot Email?",
                 style:
                     TextStyle(color: Colors.deepPurpleAccent, fontSize: 16))),
       ]),
