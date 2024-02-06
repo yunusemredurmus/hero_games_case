@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
 class AppTextField extends StatelessWidget {
-  const AppTextField({super.key, this.hintText, this.controller, this.obscureText});
-  final String? hintText;
+  const AppTextField({
+    super.key,
+    this.labelText,
+    this.controller,
+    this.obscureText,
+    this.maxLines,
+  });
+  final String? labelText;
   final TextEditingController? controller;
   final bool? obscureText;
-  
-
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +25,10 @@ class AppTextField extends StatelessWidget {
             color: Colors.red,
           ),
         ),
-        hintText: hintText,
+        labelText: labelText,
       ),
+      obscureText: obscureText ?? false,
+      maxLines: maxLines ?? 1,
     );
   }
 }
