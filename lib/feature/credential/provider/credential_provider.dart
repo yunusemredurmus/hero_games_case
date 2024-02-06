@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hero_games_case/core/utils/app_user_manager.dart';
 import 'package:hero_games_case/core/utils/base_provider.dart';
@@ -35,7 +36,7 @@ class CredentialProvider extends BaseProvider {
           await UserDto.signUpWithEmailAndPassword(email, password);
       if (userCredential != null) {
         final user = UserDto(
-          id: AppUserManager().user?.id,
+          id: FirebaseAuth.instance.currentUser?.uid,
           email: email,
           password: password,
           birthDate: birthDate,
@@ -43,6 +44,7 @@ class CredentialProvider extends BaseProvider {
           name: nameController.text,
           surname: surnameController.text,
         );
+        AppUserManager().user = user;
         await UserDto.saveUserToDatabase(user);
         // ignore: use_build_context_synchronously
         Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);

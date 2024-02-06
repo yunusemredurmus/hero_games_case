@@ -9,6 +9,7 @@ class HobbyDto {
   final String id;
   final DateTime? createdAt;
   final String title;
+  final String? userId = AppUserManager().user?.id;
 
   HobbyDto({
     required this.id,
@@ -18,6 +19,7 @@ class HobbyDto {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
+      'id': id,
       'userId': AppUserManager().user?.id,
       'createdAt': createdAt ?? DateTime.now().millisecondsSinceEpoch,
       'title': title,

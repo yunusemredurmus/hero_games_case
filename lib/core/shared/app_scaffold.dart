@@ -7,14 +7,12 @@ class AppScaffold<T extends BaseProvider> extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget? body;
   final Color? backgroundColor;
-  final Drawer? drawer;
 
   const AppScaffold({
     super.key,
     this.appBar,
     this.backgroundColor,
     this.body,
-    this.drawer,
   });
 
   @override
@@ -29,7 +27,6 @@ class AppScaffold<T extends BaseProvider> extends StatelessWidget {
             backgroundColor: backgroundColor ?? Colors.white,
             appBar: appBar,
             body: body,
-            drawer: drawer,
           ),
           Selector<T, bool>(
             selector: (_, provider) => provider.isLoading,
