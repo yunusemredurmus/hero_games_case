@@ -57,31 +57,23 @@ class RegisterScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: Colors.deepPurpleAccent[200],
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: List.from([
-                          const BoxShadow(
-                            color: Colors.black,
-                            blurRadius: 4,
-                            spreadRadius: 0.1,
-                            offset: Offset(0, 2),
-                          ),
-                        ], growable: true),
                       ),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
                             provider.birthDate == null
                                 ? 'YY-MM-DD'
                                 : 'Birth Date: ${provider.birthDate!.year}-${provider.birthDate!.month}-${provider.birthDate!.day}',
                             style: const TextStyle(
-                                fontSize: 22, color: Colors.white),
+                                fontSize: 22, color: Colors.deepPurpleAccent),
                           ),
                           IconButton(
                             onPressed: () => provider.selectDate(context),
                             icon: const Icon(Icons.calendar_today),
-                            color: Colors.white,
+                            color: Colors.deepPurpleAccent,
+                            iconSize: 32,
                           ),
                         ],
                       ),
