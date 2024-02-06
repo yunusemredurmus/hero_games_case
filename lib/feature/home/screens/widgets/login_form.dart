@@ -48,7 +48,7 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: 10),
           TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/forgot');
+                Navigator.pushNamed(context, '/');
               },
               child: const Text("Forgot Email?",
                   style:
